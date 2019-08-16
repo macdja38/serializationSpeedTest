@@ -1,0 +1,36 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install, test
+      run: |
+        npm install
+        npm test > README.md
+    - name: commit back
+      run: |
+        mkdir -p ~/.ssh/
+        echo $ACTIONS_SECRET_KEY | base64 --decode > ~/.ssh/id_rsa
+        chmod 700 ~/.ssh/id_rsa
+        ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+        git config --global user.name 'Mr Pinchy'
+        git config --global user.email 'mr.pinchy@cds-snc.ca'
+        git add -A && git commit -m 'This is an auto-commit' --allow-empty
+        git push "git@github.com:${GITHUB_REPOSITORY}.git" HEAD:master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACTIONS_SECRET_KEY: ${{ secrets.ACTIONS_SECRET_KEY }}
