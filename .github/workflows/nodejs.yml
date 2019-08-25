@@ -23,6 +23,11 @@ jobs:
         npm test > README.md
     - name: commit back
       run: |
+        export AUTHOR=$(git log -1 --pretty=format:'%an')
+        if [ "$AUTHOR" = "Mr Pinchy" ];
+        then
+          exit 0;
+        fi
         mkdir -p ~/.ssh/
         echo $ACTIONS_SECRET_KEY | base64 --decode > ~/.ssh/id_rsa
         chmod 700 ~/.ssh/id_rsa
