@@ -20,7 +20,7 @@ jobs:
     - name: npm install, test
       run: |
         npm install
-        npm test > README.md
+        npm test | sed -e 's/\n/  \n/g' > README.md
     - name: commit back
       run: |
         export AUTHOR=$(git log -1 --pretty=format:'%an')

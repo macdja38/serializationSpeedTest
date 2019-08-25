@@ -51,13 +51,18 @@ suit
   })
 
   .on('complete', function () {
-    console.log(Object.entries(length).map(([key, entry]) => `${key} | ${entry.length} | ${entry.slice(0, 100)}`));
+    console.log("**Encoding Outputs**\n");
+    Object.entries(length).map(([key, entry]) => `${key} | ${entry.length} | ${entry.slice(0, 100)}`).forEach((r) => {
+      return console.log(`${r}\n`);
+    });
+    console.log("**Encoding Timings**\n");
     for (let i = 0; i < this.length; i++) {
       console.log(String(this[i]));
-      console.log(`${this[i].name} achieved a mean of mean ${this[i].stats.mean}s and a cycle speed of ${this[i].hz}ops/sec `);
+      console.log(`${this[i].name} achieved a mean of mean ${this[i].stats.mean}s and a cycle speed of ${this[i].hz}ops/sec\n`);
     }
-    console.log('Fastest is ' + this.filter('fastest').map('name'));
-    console.log('Slowest is ' + this.filter('slowest').map('name'));
+    console.log("**Results**\n");
+    console.log(`Fastest is ${this.filter('fastest').map('name')}\n`);
+    console.log(`Slowest is ${this.filter('slowest').map('name')}\n`);
   })
 
   .run();
