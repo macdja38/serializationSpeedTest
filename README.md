@@ -14,23 +14,23 @@ theLongOne | 524288 | 1313131313131313131313131313131313131313131313131313131313
 
 **Encoding Timings**
 
-Generate x 10,466 ops/sec ±2.15% (84 runs sampled)
-Generate achieved a mean of mean 0.000095545337476696s and a cycle speed of 10466.235469040079ops/sec
+Generate x 7,901 ops/sec ±3.34% (81 runs sampled)
+Generate achieved a mean of mean 0.00012656034187542284s and a cycle speed of 7901.369300853582ops/sec
 
-To String x 76.38 ops/sec ±1.65% (66 runs sampled)
-To String achieved a mean of mean 0.013091982758333329s and a cycle speed of 76.38262427159694ops/sec
+To String x 72.15 ops/sec ±1.03% (72 runs sampled)
+To String achieved a mean of mean 0.013860179298611112s and a cycle speed of 72.1491387993954ops/sec
 
-To Buffer To String x 783,907,795 ops/sec ±1.34% (86 runs sampled)
-To Buffer To String achieved a mean of mean 1.2756602331416176e-9s and a cycle speed of 783907794.5835636ops/sec
+To Buffer To String x 650,855,479 ops/sec ±0.56% (89 runs sampled)
+To Buffer To String achieved a mean of mean 1.536439397358258e-9s and a cycle speed of 650855479.0507144ops/sec
 
-To JSON x 70.94 ops/sec ±2.08% (72 runs sampled)
-To JSON achieved a mean of mean 0.01409556392361111s and a cycle speed of 70.94430598302819ops/sec
+To JSON x 64.00 ops/sec ±1.21% (65 runs sampled)
+To JSON achieved a mean of mean 0.015624472930769228s and a cycle speed of 64.00215894839582ops/sec
 
-Text Decoder x 1,771 ops/sec ±2.53% (82 runs sampled)
-Text Decoder achieved a mean of mean 0.0005646591413265004s and a cycle speed of 1770.9799183464813ops/sec
+Text Decoder x 1,745 ops/sec ±1.48% (89 runs sampled)
+Text Decoder achieved a mean of mean 0.0005730067690777154s and a cycle speed of 1745.1800815713796ops/sec
 
-array then map then toString then join x 15.10 ops/sec ±2.85% (29 runs sampled)
-array then map then toString then join achieved a mean of mean 0.06621334805172414s and a cycle speed of 15.102694991632594ops/sec
+array then map then toString then join x 13.92 ops/sec ±3.47% (38 runs sampled)
+array then map then toString then join achieved a mean of mean 0.07186098928947368s and a cycle speed of 13.915756099206412ops/sec
 
 **Results**
 
